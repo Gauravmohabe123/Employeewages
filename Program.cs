@@ -10,14 +10,14 @@ namespace Employee_wages
             Console.WriteLine(" Name of employee is:");
             string name=Console.ReadLine();
             Random random= new Random();
-            int isEmp=random.Next(0,2);
-            if(isEmp==0)
+            int n=random.Next(0,2);
+            if(n==0)
             {
-                Console.WriteLine(name +" Employee is present");
+                Console.WriteLine("Employee is present");
             }
             else
             {
-                Console.WriteLine(name +" Employee is absent");
+                Console.WriteLine("Employee is absent");
             }
         }
     }
