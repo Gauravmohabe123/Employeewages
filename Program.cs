@@ -13,11 +13,11 @@ namespace Employee_wages
             int n=random.Next(0,2);
             if(n==0)
             {
-                Console.WriteLine("Employee is present");
+                Console.WriteLine("Employee is Absent");
             }
             else
             {
-                Console.WriteLine("Employee is absent");
+                Console.WriteLine("Employee is Present");
             }
         }
     }
