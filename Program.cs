@@ -3,42 +3,56 @@
 namespace Employee_wages
 {
     internal class Program
-    {
+    {static void wage_Attendance()
+        {
+            Console.WriteLine("Welcome to the Employee Wage Computation");
+        }
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Welcome to Employee Wage Computation");
-            Random random = new Random();
-            int WagePerHour = 20;
+               
+            int WageperHour = 20;
             int FullDayHour = 8;
-            int partTimeHour = 4;
-            int workingDaysPerMonth = 20;
-            int totalWage = 0;
-            int noOfDaysPresent = 20;
-            for (int i = 0; i < workingDaysPerMonth; i++)
+            int partTimehour = 4;
+            int wage = 0;
+            Random rnd = new Random();
+            int monthlyWage = 0;
+            int day = 1;
+            int count = 1;
+            int absent = 1;
+            while (day != 20 && count != 30)
+
             {
-                int number = random.Next(0, 3);
-                switch (number)
+                int n = rnd.Next(0, 3);
+                switch (n)
+
                 {
-                    // 0 for full time
                     case 0:
-                        totalWage = totalWage + (FullDayHour * WagePerHour);
+                        absent++;
+                        count++;
                         break;
-                    // 1 for partime
+
                     case 1:
-                        totalWage += (partTimeHour * WagePerHour);
+
+                        wage = partTimehour * WageperHour;
+                        monthlyWage = wage + monthlyWage;
+                        count++;
+                        day++;
                         break;
-                    //2 for absent
                     case 2:
-                        noOfDaysPresent--;
-                        totalWage += 0;
+                        wage = FullDayHour * WageperHour;
+                        monthlyWage = wage + monthlyWage;
+                        count++;
+                        day++
                         break;
-                    default:
-                        break;
+
                 }
+
             }
-            Console.WriteLine("Number of Days Employee is Present: " + noOfDaysPresent + " Days");
-            Console.WriteLine("total wages for the month is: " + totalWage);
+            Console.WriteLine("monthly wage :" + monthlyWage);
+            Console.WriteLine("prasent days :" + day);
+            Console.WriteLine("total absent in a month:" + absent);
+            wage_Attendance();
+            
         }
     }
 }
